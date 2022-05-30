@@ -1,0 +1,23 @@
+SINGLE LED:-  00,02
+ALTERNATE LED:-  55,AA
+FLASHING LED :- 00,FF
+4 ON 4 OFF :- 0F,F0
+
+#include<reg51.h>
+void Delay(void);
+void main (void)
+{
+P1=0X00;
+while(1) //infinite loop
+{
+P1=0X00;
+Delay();
+P1=0X02;
+Delay();
+}
+}
+void Delay ()
+{
+unsigned int i;
+for (i=0;i<50000;i++);
+}

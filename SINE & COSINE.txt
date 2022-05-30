@@ -1,0 +1,45 @@
+SINE WAVE:-
+
+#include<reg51.h>
+void delay(int time);
+void main(){
+int sin_value[13] = {128,192,238,255,238,192,128,64,17,0,17,64,128};
+int i;
+while(1){
+//infinite loop
+for(i = 0; i<13; i++)
+{
+P2= sin_value[i];
+delay(10);
+}
+}
+}
+void delay(int time)
+{unsigned int x,y;
+for(x=0;x<time;x++)
+for(y=0;y<1275;y++);
+}
+
+
+COSINE WAVE:-
+
+
+#include<reg51.h>
+void delay(int time);
+void main(){
+int sin_value[13] = {255,238,192,128,64,17,0,17,64,128,192,238,255};
+int i;
+while(1){
+//infinite loop
+for(i = 0; i<13; i++)
+{
+P2= sin_value[i];
+delay(10);
+}
+}
+}
+void delay(int time)
+{unsigned int x,y;
+for(x=0;x<time;x++)
+for(y=0;y<1275;y++);
+}
