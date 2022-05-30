@@ -1,0 +1,126 @@
+DIVISION OF 2 NUMBER:-
+
+# ORG 7000H
+	   LDA 7501
+	   MOV B,A
+	   LDA 7502
+	   MVI C,00
+	   CMP B
+	   JC DOWN
+
+UP:	   SUB B
+	   INR C
+	   CMP B
+	   JNC UP
+
+DOWN:	   STA 7503
+	   MOV A,C
+	   STA 7504
+	   RST 1
+# ORG 7501H
+# DB 05H,30H
+
+
+
+COUNT NO.OF 1"S:-
+
+# ORG 2000H
+	   LDA 2501
+	   MVI C,00
+	   MVI D,08
+
+UP:	   RLC
+	   JNC DOWN
+	   INR C
+
+DOWN:	   DCR D
+	   JNZ UP
+	   RST 1
+# ORG 2501H
+# DB 55H
+
+    BLOCK TRANSFER:-
+
+# ORG 2000H
+	   MVI D,05
+	   LXI H,F100
+	   LXI B,F200
+
+UP:	   MOV A,M
+	   STAX B
+	   INX H
+	   INX B
+	   DCR D
+	   JNZ UP
+	   RST 1
+# ORG F100
+# DB 02,05,06,08,03
+
+
+	FACTORIAL NUMBER:-
+
+           LXI SP,27FF
+	   LDA 2200
+	   CPI 02
+           JC LAST
+	   MVI D,00
+	   MOV E,A
+	   DCR A
+	   MOV C,A
+	   CALL FACTO
+	   XCHG
+	   SHLD 2201
+	   JMP END
+
+LAST:	   LXI H,0001
+
+END:	   SHLD 2201
+	   HLT
+
+FACTO:	   LXI H,0000
+	   MOV B,C
+
+BACK:	   DAD D
+	   DCR B
+	   JNZ BACK
+	   XCHG
+	   DCR C
+	   CNZ FACTO
+	   RET
+# ORG 2200H
+# DB 07
+
+
+
+      
+
+
+ASSENDING ORDER:-
+
+# ORG 1000H
+	   LDA 2501
+	   DCR A
+	   MOV C,A
+	   MOV B,C
+	   LXI H,3000
+
+UP:	   MOV A,M
+	   INX H
+	   CMP M
+	   JC DOWN
+	   MOV D,M
+	   MOV M,A
+	   DCX H
+	   MOV M,D
+	   INX H
+
+DOWN:	   DCR B
+	   JNZ UP
+	   DCR C
+	   JNZ 1005
+	   RST 1
+# ORG 2501
+# DB 05
+# ORG 3000H
+# DB 03,12,05,07,11
+
