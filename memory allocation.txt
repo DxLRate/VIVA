@@ -1,0 +1,26 @@
+ Memory Management is the process of controlling and coordinating computer 
+memory, assigning portions known as blocks to various running programs to optimize the 
+overall performance of the system. 
+
+There are different Placement Algorithm:
+**************  first fit ******************
+1. First Fit: In the first fit, the partition is allocated which is the first sufficient block from the 
+top of Main Memory. It scans memory from the beginning and chooses the first available block 
+that is large enough. Thus, it allocates the first hole that is large enough.
+
+******************* next fit ********************
+4. Next Fit: Next fit is similar to the first fit but it will search for the first sufficient partition 
+from the last allocation point.
+
+
+************************** worst fit *******************
+3. Worst Fit Allocate the process to the partition which is the largest sufficient among the 
+freely available partitions available in the main memory. It is opposite to the best-fit algorithm. 
+It searches the entire list of holes to find the largest hole and allocate it to process. 
+
+************************* best fit ***********************
+2. Best Fit Allocate the process to the partition which is the first smallest sufficient partition 
+among the free available partition. It searches the entire list of holes to find the smallest hole 
+whose size is greater than or equal to the size of the process.
+
+

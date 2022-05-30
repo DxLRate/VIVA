@@ -1,0 +1,53 @@
+VirtualBox allows us to run an entire operating system inside another operating 
+system.
+
+Advantages of virtual installation
+● The size of the installation does not have to be predetermined. It can be a 
+dynamically resized virtual hard drive.
+● No reboot needed in order to switch between Ubuntu and Windows.
+● The virtual machine will use Windows internet connection.
+● The virtual machine will set up its own video configuration.
+● For troubleshooting purposes, take screenshots of any part of Ubuntu (including 
+the boot menu or the login screen).
+● It's low commitment. We can uninstall VirtualBox and terminate Ubuntu.
+
+Disadvantages of virtual installation
+● In order to get any kind of decent performance, at least 512 MB of RAM is needed, 
+because we are running an entire operating system (Ubuntu) inside another entire 
+operating system (Windows).
+● Even though the low commitment factor can seem like an advantage at first, if we 
+later decide we want to switch to Ubuntu and ditch Windows completely, we cannot 
+simply delete Windows partition.
+● Every time we want to use Ubuntu, we have to wait for two boot times (the time it 
+takes to boot Windows, and then the time it takes to boot Ubuntu within Windows).
+
+Installation steps- 
+1. Download VirtualBox using the link - https://www.virtualbox.org/wiki/Downloads
+2. Follow these instructions to get an Ubuntu disk image (.iso file).
+3. After you launch VirtualBox from the Windows Start menu, click on New to create a 
+new virtual machine. When the New Virtual Machine Wizard appears, click Next.
+4. Assign title to the machine also specify that the operating system is Linux.
+5. VirtualBox will try to guess memory (or RAM) to allocate for the virtual machine. If 
+we have 1 GB or less of RAM, proceed as it is with the recommendation. If we have 
+over 1 GB,about a quarter RAM or less should be fine. For example, if we have 2 GB of RAM,
+512 MB is fine to allocate. If we have 4 GB of RAM, 1 GB is fine to allocate. If we have no idea 
+what RAM is or how much of it we have, just go with the default. Click Next.
+6. Create new hard disk and then click Next.
+7. Click Next again.
+8. A dynamically expanding virtual hard drive is best, because it take up only what actually 
+is used. But when installing new software in a virtualized Ubuntu, in which the virtual hard 
+drive fills up instead of expanding. So it is recommended to Fixed-size storage.
+9. Ubuntu's default installation is less than 3 GB
+10. Click Create and wait for the virtual hard drive to be created. This is actually a very 
+large file that lives inside of Windows installation.
+11. Now make the (currently blank) virtual hard drive useful is to add the downloaded 
+Ubuntu disk image (the .iso) boot on virtual machine. Click on Settings and 
+Storage. Then, under CD/DVD Device, next to Empty,Click the folder icon.
+12. Select the Ubuntu .iso that was downloaded earlier.
+13. After selection, click OK. Then double-click virtual machine to start it up.
+14. A bunch of random warnings/instructions about how to operate the guest operating 
+system within VirtualBox.
+15. Wait for Ubuntu to boot up.
+16. Once it is started up, just follow the regular installation procedure
+17. In order to use virtualized installation (instead of continually booting the live 
+CD), double-check that the CD/DVD Device entry is Empty again
